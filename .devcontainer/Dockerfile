@@ -1,11 +1,11 @@
-FROM python:3.10
+FROM python:3.12
 
 ENV PYTHONUNBUFFERED 1
 
-ARG DOCKER_HOME="/opt/hokei"
-ARG DOCKER_CODE="/opt/hokei/code"
-ARG DOCKER_GROUP="hokei"
-ARG DOCKER_USER="hokei"
+ARG DOCKER_HOME="/opt/motiong"
+ARG DOCKER_CODE="/opt/motiong/code"
+ARG DOCKER_GROUP="motiong"
+ARG DOCKER_USER="motiong"
 ARG DOCKER_UID=5000
 
 WORKDIR ${DOCKER_CODE}
@@ -34,7 +34,7 @@ RUN mkdir ${DOCKER_HOME}/.ssh && \
     ssh-keyscan bitbucket.org >> ${DOCKER_HOME}/.ssh/known_hosts && \
     echo "alias docker='sudo docker'" > ${DOCKER_HOME}/.bashrc
 
-ENV PATH "$PATH:/opt/hokei/.local/bin"
+ENV PATH "$PATH:/opt/motiong/.local/bin"
 
 USER ${DOCKER_USER}
 
