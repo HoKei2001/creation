@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ~/.ssh/id_rsa:/opt/hokei/.ssh/id_rsa
+      - ..:/opt/hokei/code
+      - ~/etc/localtime:/opt/hokei/etc/localtime
+      - ~/etc/timezone:/opt/hokei/etc/timezone
+    command: ["tail -f /dev/null"]
