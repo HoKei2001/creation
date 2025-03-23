@@ -27,6 +27,11 @@ RUN apt-get update && \
 RUN apt-get install -y zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+# Install node
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
+
+
 # Setup env
 RUN mkdir ${DOCKER_HOME}/.ssh && \
     chown -R ${DOCKER_USER} ${DOCKER_HOME}/.ssh && \
