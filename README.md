@@ -1,64 +1,65 @@
-# Code Generation Platform
+# Chatbot with Execution Flow Visualization
 
-A platform for generating and executing code using LLM in a sandbox environment.
+This project implements a chatbot with a visual representation of its execution flow, built with React and FastAPI.
 
-## Features
+## Project Structure
 
-- Code generation using LLM
-- Secure code execution in Docker containers
-- Support for multiple programming languages
-- Modern React frontend with Material-UI
-- FastAPI backend with Docker support
-
-## Prerequisites
-
-- Docker and Docker Compose
-- OpenAI API key (for code generation)
-
-## Setup
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd code-generation-platform
+```
+app/
+├── frontend/          # React frontend
+│   ├── src/          # Source code
+│   ├── package.json  # NPM dependencies
+│   └── tsconfig.json # TypeScript configuration
+│
+└── backend/          # FastAPI backend
+    ├── main.py      # Main application
+    └── pyproject.toml # Poetry dependencies
 ```
 
-2. Create a `.env` file in the root directory and add your OpenAI API key:
-```
-OPENAI_API_KEY=your-api-key-here
-```
-
-3. Build and start the services:
-```bash
-docker-compose up --build
-```
-
-4. Access the application:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-- API Documentation: http://localhost:8000/docs
-
-## Development
+## Setup and Installation
 
 ### Backend
 
-The backend is built with FastAPI and uses Poetry for dependency management. To run it locally:
-
+1. Install Poetry (if not already installed):
 ```bash
-cd app
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+2. Install dependencies:
+```bash
 poetry install
-poetry run uvicorn main:app --reload
+```
+
+3. Run the backend server:
+```bash
+cd app/backend
+poetry run python main.py
 ```
 
 ### Frontend
 
-The frontend is built with React and TypeScript. To run it locally:
-
+1. Install dependencies:
 ```bash
-cd frontend
+cd app/frontend
 npm install
+```
+
+2. Start the development server:
+```bash
 npm start
 ```
+
+## Development
+
+- Frontend runs on: http://localhost:3000
+- Backend runs on: http://localhost:8000
+
+## Features
+
+- Real-time chat interface
+- Visual execution flow display
+- Step-by-step task processing visualization
+- Modern and responsive UI design
 
 ## Security
 

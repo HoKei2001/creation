@@ -5,7 +5,7 @@ from typing import Optional, List
 import docker
 import os
 from openai import OpenAI
-from app.models import AVAILABLE_MODELS, DEFAULT_MODEL
+from backend.models import AVAILABLE_MODELS, DEFAULT_MODEL
 
 app = FastAPI(title="Code Generation Platform")
 
